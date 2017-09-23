@@ -1,0 +1,19 @@
+{
+  "name": "chi_towed_cars",
+  "version": "1.0.0",
+  "description": "",
+  "main": "input_form.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HeyMarcy/chi_towed_cars.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HeyMarcy/chi_towed_cars/issues"
+  },
+  "homepage": "https://github.com/HeyMarcy/chi_towed_cars#readme"
+}
