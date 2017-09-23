@@ -18,11 +18,11 @@ function returnCar(searchState, searchPlate, searchMake, searchColor) {
         for (var x = 0; x < carArray.length; x++){
             var date = new Date(carArray[x].tow_date);
             
-            document.getElementById("text").innerHTML += ("<br />" + carArray[x].state + " - " + carArray[x].plate + "<br />" +  carArray[x].make + " - " + carArray[x].model + " - " + carArray[x].style + " - " + carArray[x].color + "<br />" + date.toDateString() + "<br /><br />" + carArray[x].inventory_number + "<br />" + carArray[x].towed_to_address + "<br />" + carArray[x].tow_facility_phone + "<br />");
+            document.getElementById("text").innerHTML = ("<br />" + carArray[x].state + " - " + carArray[x].plate + "<br />" +  carArray[x].make + " - " + carArray[x].model + " - " + carArray[x].style + " - " + carArray[x].color + "<br />" + date.toDateString() + "<br /><br />" + carArray[x].inventory_number + "<br />" + carArray[x].towed_to_address + "<br />" + carArray[x].tow_facility_phone + "<br />");
         }  
     }
     else {
-        document.getElementById("text").innerHTML += ("<br />No car has been found.<br />");
+        document.getElementById("text").innerHTML = ("<br />No car has been found.<br />");
     }
               
 }
@@ -31,10 +31,9 @@ request.onload = function () {
     'use strict';
     //returnCar("", "", "ACUR", "BLK");
     
-    returnCar("", "", "",  "");
+    //returnCar("", "", "",  "");
     
-   
-    //returnCar("IL", "L756917" , "", "");
+    returnCar("IL", "L756917" , "", "");
     
     //returnCar("", "", "SUZI", "WHI");
 };
