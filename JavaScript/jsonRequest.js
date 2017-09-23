@@ -17,8 +17,13 @@ function returnCar(searchState, searchPlate, searchMake, searchColor) {
     if (carArray.length >= 1) {
         for (var x = 0; x < carArray.length; x++){
             var date = new Date(carArray[x].tow_date);
+            var address = carArray[x].towed_to_address;
+            address = address.replace(/\s/g, "+");
+            var googleLink = ("https://www.google.com/maps/place/" + address + ",Chicago,+IL");
             
-            document.getElementById("text").innerHTML = ("<br />" + carArray[x].state + " - " + carArray[x].plate + "<br />" +  carArray[x].make + " - " + carArray[x].model + " - " + carArray[x].style + " - " + carArray[x].color + "<br />" + date.toDateString() + "<br /><br />" + carArray[x].inventory_number + "<br />" + carArray[x].towed_to_address + "<br />" + carArray[x].tow_facility_phone + "<br />");
+            document.getElementById("returnedCars").innerHTML += ("<h3>Located Car</h3>" + "<p>" + "<b>Plate: </b>" + carArray[x].plate + " <b>State: </b>" + carArray[x].state + "<br />" + "<b>Make: </b>" + carArray[x].make + " <b>Color: </b>" + carArray[x].color + "<br /></p>");   
+            
+            document.getElementById("returnedCars").innerHTML += ("<h3>Tow Location</h3>" + "<b>Inventory No. </b>" + carArray[x].inventory_number + "<br />" + "<b>Address: </b>" + "<a target='_blank' href="  + googleLink + ">" +  carArray[x].towed_to_address + "</a>" + "<br />" + "<b>Phone: </b>" + carArray[x].tow_facility_phone + "</p>");                                                 
         }  
     }
     else {
