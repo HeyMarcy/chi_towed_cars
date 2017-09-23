@@ -1,16 +1,274 @@
-<!doctype html>
-<html>
-	<head>
-	   <meta charset="utf-8">
-	   <title>Chicago Tow Tracker</title>
-        <script type="text/javascript" src="JavaScript/jsonRequest.js"></script>
-        
-	</head>
-    <header></header>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/img/favicon.png">
 
-	<body>
-		<p>Chicago Tow Tracker</p>
-        <div id="returnedCars"></div>
-        
-	</body>
+    <title>Oh, no! My Car Got Towed!</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <!-- Fonts from Google Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+
+
+	<div id="headerwrap">
+    <div class="container" >
+      <div class="row mt centered">
+        <div class="col-lg-8 col-lg-offset-2">
+          <h1><strong>Oh NO!</strong></br>My car got towed!</h1>
+          <h4 style="color:#eeeeee">To see if your car has been impounded by the City of Chicago, you can search by license plate number and state,or by your car's manufacturer and color.</h4>
+          <hr style="margin: 50px 0 0 0">
+        </div>
+
+      </div><!-- /row -->
+
+
+      <div class="row mt centered">
+  <div class="col-lg-6 col-lg-offset-3">
+          <form class="form-inline" role="form">
+            <div class="form-group">
+              <input type="plate" class="form-control form-control-1" id="exampleInputEmail1" placeholder="Enter your plate number">
+            </div>
+            <div class="form-group">
+              <select class="form-control form-control-2" id="state" name="state">
+        <option value="">Select your state</option>
+        <option value="AK">Alaska</option>
+        <option value="AL">Alabama</option>
+        <option value="AR">Arkansas</option>
+        <option value="AZ">Arizona</option>
+        <option value="CA">California</option>
+        <option value="CO">Colorado</option>
+        <option value="CT">Connecticut</option>
+        <option value="DC">District of Columbia</option>
+        <option value="DE">Delaware</option>
+        <option value="FL">Florida</option>
+        <option value="GA">Georgia</option>
+        <option value="HI">Hawaii</option>
+        <option value="IA">Iowa</option>
+        <option value="ID">Idaho</option>
+        <option value="IL">Illinois</option>
+        <option value="IN">Indiana</option>
+        <option value="KS">Kansas</option>
+        <option value="KY">Kentucky</option>
+        <option value="LA">Louisiana</option>
+        <option value="MA">Massachusetts</option>
+        <option value="MD">Maryland</option>
+        <option value="ME">Maine</option>
+        <option value="MI">Michigan</option>
+        <option value="MN">Minnesota</option>
+        <option value="MO">Missouri</option>
+        <option value="MS">Mississippi</option>
+        <option value="MT">Montana</option>
+        <option value="NC">North Carolina</option>
+        <option value="ND">North Dakota</option>
+        <option value="NE">Nebraska</option>
+        <option value="NH">New Hampshire</option>
+        <option value="NJ">New Jersey</option>
+        <option value="NM">New Mexico</option>
+        <option value="NV">Nevada</option>
+        <option value="NY">New York</option>
+        <option value="OH">Ohio</option>
+        <option value="OK">Oklahoma</option>
+        <option value="OR">Oregon</option>
+        <option value="PA">Pennsylvania</option>
+        <option value="PR">Puerto Rico</option>
+        <option value="RI">Rhode Island</option>
+        <option value="SC">South Carolina</option>
+        <option value="SD">South Dakota</option>
+        <option value="TN">Tennessee</option>
+        <option value="TX">Texas</option>
+        <option value="UT">Utah</option>
+        <option value="VA">Virginia</option>
+        <option value="VT">Vermont</option>
+        <option value="WA">Washington</option>
+        <option value="WI">Wisconsin</option>
+        <option value="WV">West Virginia</option>
+        <option value="WY">Wyoming</option>
+      </select>
+            </div>
+            <button type="submit" class="btn btn-warning btn-lg">Search</button>
+          </form>
+
+        </div><!--/col-lg-6 -->
+      </div>
+      <div class="centered">
+        <div class="col-lg-6 col-lg-offset-3">
+          <h3 style='color:white; margin:-20px 0 30px 0'>OR</h13>
+        </div>
+      </div>
+      <div class="row mt centered">
+        <div class="col-lg-6 ">
+
+
+        </div><!--/col-lg-6 -->
+
+
+        <div class="col-lg-6 col-lg-offset-3">
+          <form class="form-inline" role="form">
+            <div class="form-group">
+        <select class="form-control form-control-1" id="make" name="make">
+        <option value="">Select make</option>
+<option value="NISS">NISS</option>
+<option value="HOND ">HOND</option>
+<option value="TOYT ">TOYT</option>
+<option value="BUIC ">BUIC</option>
+<option value="DODG ">DODG</option>
+<option value="JEEP ">JEEP</option>
+<option value="LINC ">LINC</option>
+<option value="HD ">HD</option>
+<option value="KAWK ">KAWK</option>
+<option value="CYCL ">CYCL</option>
+<option value="DUCA ">DUCA</option>
+<option value="CADI ">CADI</option>
+<option value="FORD ">FORD</option>
+<option value="HYUN ">HYUN</option>
+<option value="GMC ">GMC</option>
+<option value="PONT">PONT</option>
+<option value="CHEV ">CHEV</option>
+<option value="VOLK ">VOLK</option>
+<option value="GMC ">GEO</option>
+<option value="CHRY ">CHRY</option>
+<option value="HINO ">HINO</option>
+<option value="KIA ">KIA</option>
+<option value="MERC ">MERC</option>
+<option value="LNDR ">LNDR</option>
+<option value="ISU ">ISU</option>
+<option value="MITS ">MITS</option>
+<option value="MERZ ">MERZ</option>
+<option value="SUZI">SUZI</option>
+<option value="VOLV ">VOLV</option>
+<option value="PLYM ">PLYM</option>
+<option value="AUDI ">AUDI</option>
+<option value="SATR ">SATR</option>
+<option value="TRIH ">TRIH</option>
+<option value="OLDS ">OLDS</option>
+<option value="INFI ">INFI</option>
+<option value="ACUR ">ACUR</option>
+<option value="DAEW ">DAEW</option>
+<option value="BMW ">BMW</option>
+<option value=" MINI">MINI</option>
+<option value="SUBA ">SUBA</option>
+<option value="VW">VW</option>
+<option value="LEXS ">LEXS</option>
+<option value="SAA ">SAA</option>
+<option value="MAZD ">MAZD</option>
+<option value="FIAT ">FIAT</option>
+<option value="JAGU ">JAGU</option>
+<option value="TOYO ">TOYO</option>
+<option value="JAG ">JAG</option>
+<option value="SCIO ">SCIO</option>
+<option value="PORS ">PORS</option>
+<option value="MITT ">MITT</option>
+<option value="SATU">SATU</option>
+<option value="RANG ">RANG</option>
+<option value="BENS ">BENS</option>
+<option value="TODC ">TODC</option>
+<option value="SUZU ">SUZU</option>
+<option value="CRAF ">CRAF</option>
+<option value="SHL ">SHL</option>
+<option value="ROV ">ROV</option>
+<option value="LAND ">LAND</option>
+<option value="HUM ">HUMM</option>
+<option value=" ARCO">ARCO</option>
+<option value="ZCZY ">ZCZY</option>
+<option value="HUMB ">HUMB</option>
+<option value="LANR ">LANR</option>
+<option value="FOR ">FOR</option>
+<option value=" CHER">CHER</option>
+<option value="COLE">COLE</option>
+<option value="YAMA ">YAMA</option>
+<option value="TRIU ">TRIU</option>
+<option value="HARD ">HARD</option>
+<option value="VESP">VESP</option>
+<option value="TANK ">TANK</option>
+<option value="HONG">HONG</option>
+<option value="ALUM">ALUM</option>
+<option value="TLTR">TLTR</option>
+<option value="TRAL ">TRAL</option>
+<option value="GMC ">GM</option>
+<option value="GREA">GREA</option>
+      </select>
+            </div>
+            <div class="form-group">
+        <select class="form-control form-control-2" id="color" name="color">
+        <option value="">Select color</option>
+        <option value="RED">Red</option>
+        <option value="WHI">White</option>
+        <option value="GRY">Grey</option>
+        <option value="GLD">Gold</option>
+        <option value="TAN">Tan</option>
+        <option value="SIL">Silver</option>
+        <option value="BGE">Beige</option>
+        <option value="BLK">Black</option>
+        <option value="BLU">Blue</option>
+        <option value="GRN">Green</option>
+        <option value="BRO">Brown</option>
+        <option value="YEL">Yellow</option>
+        <option value="PNK">Pink</option>
+        <option value="DGR">Dark Green</option>
+        <option value="MAR">Maroon</option>
+        <option value="DBL">Dark Blue</option>
+        <option value="BRZ">Bronze</option>
+        <option value="LBL">Light Blue</option>
+        <option value="ONG">Orange</option>
+        <option value="PLE">Purple</option>
+        <option value="CRM">Cream</option>
+        <option value="TRQ">Turquoise</option>
+      </select>
+            </div>
+            <button type="submit" class="btn btn-warning btn-lg">Search</button>
+          </form>
+        </div><!--/col-lg-6 -->
+      </div><!-- /row -->
+    </div><!-- /container -->
+
+	</div><!-- /headerwrap -->
+
+
+	<div class="container ">
+		<div class="row mt centered">
+			<div class="col-lg-6 col-lg-offset-3">
+				<h1>Uh, oh....</h1>
+				<h3>Here's what we found:</h3>
+			</div>
+		</div><!-- /row -->
+
+		<div class="row mt centered">
+
+		</div><!-- /row -->
+	</div><!-- /container -->
+
+
+
+
+
+
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+  </body>
 </html>
