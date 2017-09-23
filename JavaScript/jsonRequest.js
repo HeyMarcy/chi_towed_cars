@@ -27,18 +27,17 @@ function returnCar(searchState, searchPlate, searchMake, searchColor) {
         }  
     }
     else {
-        document.getElementById("text").innerHTML = ("<br />No car has been found.<br />");
-    }
-              
+        document.getElementById("returnedCars").innerHTML = ("<h3>No car has been found.</h3>");
+    }        
 }
 
 request.onload = function () {
     'use strict';
     //returnCar("", "", "ACUR", "BLK");
     
-    //returnCar("", "", "",  "");
+    returnCar("", "", "",  "");
     
-    returnCar("IL", "L756917" , "", "");
+    //returnCar("IL", "L756917" , "", "");
     
     //returnCar("", "", "SUZI", "WHI");
 };
