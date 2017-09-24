@@ -9,6 +9,12 @@ function returnCar(searchState, searchPlate, searchMake, searchColor) {
     "use strict";
     var towedCar = request.response;
     var length = Object.keys(towedCar).length;
+    searchColor.trim();
+    searchColor.trim();
+    searchPlate.toUpperCase();
+    searchState.trim();
+    
+    console.log("returnCar function" + searchColor + searchMake + searchPlate + searchState);
     
     var carArray = towedCar.filter(function (cars) {
         return ((cars.state === searchState && cars.plate === searchPlate) || (cars.color === searchColor && cars.make === searchMake));
@@ -37,12 +43,26 @@ document.getElementById('plateStateForm').addEventListener('submit', (evt) => {
     var state = formData[1].value;
     
     console.log(formData);
-    //returnCar(plate, state, "", "");
+    returnCar(state, plate, "", "");
     console.log("HERE" + state + " " + plate);
-    evt.preventDefault();
+    evt.preventDefault(); 
     
-    
-    return("S387215", "IL", "", "");
+    //return("IL", "V444887", "", "");
     //returnCar("", "", "CHEV", "GLD");
 })
 
+document.getElementById('colorMakeForm').addEventListener('submit', (evt) => {
+    var formData = document.getElementById("colorMakeForm");
+    var make = formData[0].value;
+    var color = formData[1].value;
+    
+    console.log(formData);
+    
+    returnCar("", "", make, color);
+    
+    console.log("HERE" + make + " " + color);
+    evt.preventDefault(); 
+    
+    //return("S387215", "V444887", "", "");
+    //returnCar("", "", "CHEV", "GLD");
+})
