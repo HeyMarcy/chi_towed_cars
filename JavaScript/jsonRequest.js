@@ -31,14 +31,18 @@ function returnCar(searchState, searchPlate, searchMake, searchColor) {
     }        
 }
 
-request.onload = function () {
-    'use strict';
-    //returnCar("", "", "ACUR", "BLK");
+document.getElementById('plateStateForm').addEventListener('submit', (evt) => {
+    var formData = document.getElementById("plateStateForm");
+    var plate = formData[0].value;
+    var state = formData[1].value;
     
-    returnCar("", "", "",  "");
+    console.log(formData);
+    //returnCar(plate, state, "", "");
+    console.log("HERE" + state + " " + plate);
+    evt.preventDefault();
     
-    //returnCar("IL", "L756917" , "", "");
     
-    //returnCar("", "", "SUZI", "WHI");
-};
+    return("S387215", "IL", "", "");
+    //returnCar("", "", "CHEV", "GLD");
+})
 
