@@ -5,7 +5,7 @@ Chicago: Nerd Immersion | 2017 - 2nd Place<br />
 Hackathon challenge: Build something useful with City of Chicago data<br />
 Time Limit: 8 hours<br />
 <br />
-Tech Stack:<br/ >
+Tech Stack: <br />
 Front-end: (Bootstrap) Marcy Montross & Zachary Overhulser<br />
 Back-end: (JSON, js) Amanda Kendal-Brown & Rosa Santiago<br />
 
