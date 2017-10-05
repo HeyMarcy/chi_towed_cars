@@ -1,7 +1,7 @@
 # chi_towed_cars
 
 [Oh, no! My Car Got Towed](https://heymarcy.github.io/chi_towed_cars/)<br />
-Chicago: Nerd Immersion | 2017 - 2nd Place<br />
+[Chicago: Nerd Immersion | 2017](https://www.eventbrite.com/e/nerd-immersion-2017-tickets-37738040495) - 2nd Place<br />
 Hackathon challenge: Build something useful with City of Chicago data<br />
 Time Limit: 8 hours<br />
 <br />
